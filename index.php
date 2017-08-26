@@ -1,8 +1,9 @@
+
+
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+require('head.php');  //declaration doctype et balise meta 
+require('header.php');     //entete avec logo menu etc (commun a l'ensemble des pages)  
+require ('controleur.php');
+require('footer.php');
+?>
