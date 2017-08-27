@@ -1,5 +1,7 @@
 <footer>
-    FOOTER
+    <div class="row">
+        FOOTER
+    </div>
 </footer>
 </div>
 </body>
