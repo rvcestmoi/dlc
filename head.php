@@ -2,7 +2,7 @@
  require 'config.php';
  //Connection à la bdd
  $connect = connectBdd($dbName,$dbUser,$dbPassword);
-
+require 'fonctions.php'
 
 ?>
 

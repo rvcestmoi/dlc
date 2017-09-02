@@ -2,8 +2,9 @@
 
 // connection à la BDD
 
-define('URL','localhost/Competences'); //pour mieux organiser le site web
+define('URL','localhost/dlc'); //pour mieux organiser le site web
 define('URL_IMG',URL.'img/'); 
+define('DS','/'); 
 
 $dbName = 'dlc';
 $dbUser = 'root';

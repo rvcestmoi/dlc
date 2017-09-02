@@ -1,7 +1,7 @@
 <?php
-if (isset($_GET['p']) && $_GET['p'] == "html") {
-    include '/vues/html.php';
+if (isset($_GET['p']) && $_GET['p'] == "ajout") {
+    include DS.'vues'.DS.'ajout.php';
 
 } else
-    include '/vues/Presentation.php';
+    include '/vues/accueil.php';
 ?>

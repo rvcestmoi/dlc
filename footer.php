@@ -1,7 +1,7 @@
 <footer>
-    <div class="row">
-        FOOTER
-    </div>
+    
+Copyright H.Rouilard 2017
+
 </footer>
 </div>
 </body>
