@@ -7,4 +7,26 @@ and open the template in the editor.
     Created on : 27 août 2017, 22:01:43
     Author     : rvnew
 */
+header {
+    height: 100px;
+    text-align: center;
+    background-color: #eccff8;
+    line-height: 100px;
+    color : #a706ec;
+    font-weight: bold;       
+}
 
+footer {
+    height: 50px;
+    text-align: left;
+    background-color: #eccff8;
+    line-height: 50px;
+    color : grey;
+    font-size: 9px;      
+}
+.btn-primary {
+    background-color: #eccff8;
+    color : #a706ec;
+    font-weight: bold;
+    
+}
