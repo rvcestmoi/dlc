@@ -4,7 +4,7 @@ $active = 'class="active"';
 ?>
 
 <header>
-    <a href="?p=accueil" >
+    <a href="" >
         <div class="row" > DLC</div>
     </a>
 

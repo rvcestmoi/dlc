@@ -1,5 +1,5 @@
 <?php
-if (isset($_GET['p']) && $_GET['p'] == "ajout") {
+if (isset($_GET['id'])) {
     include DS.'vues'.DS.'ajout.php';
 
 } else

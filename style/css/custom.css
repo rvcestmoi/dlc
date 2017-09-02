@@ -27,6 +27,14 @@ footer {
 .btn-primary {
     background-color: #eccff8;
     color : #a706ec;
+    font-weight: bold;    
+}
+.item_liste {
+    height : 50px;
+    line-height: 50px;
     font-weight: bold;
-    
+    margin : 2px;
+    text-align: center;
+    border : 1px solid black;
+   color :black;
 }
