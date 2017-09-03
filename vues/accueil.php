@@ -54,7 +54,7 @@ $listes = $listeModel->getAllUntrash($connect);
     <div class ="col-md-6">
         <?php
         foreach ($listes as $liste) {
-            echo '<a href="?id='.$liste['produit_id'].'"'.'><div class="item_liste" style="background-color:'.getCouleur($liste).'"'.'>' . $liste['libelle'] . ' à consommer avant :' . getInterval($liste). ' jours</div></a>';
+            echo '<div class="item_liste '.$liste['liste_id'].  '"'.' style="background-color:'.getCouleur($liste).'"'.'>' . $liste['libelle'] . ' à consommer avant :' . getInterval($liste). ' jours</div>';
         }
         ?>
     </div>
