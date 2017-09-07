@@ -10,7 +10,7 @@ require 'head.php';
 if (isset($_GET['id'])) {
 $id = $_GET['id'];
 $liste = new Liste();
-$liste->setTrash($connect, $id);
+$liste->setUnTrash($connect, $id);
 header('Location : accueil.php');
 }
 

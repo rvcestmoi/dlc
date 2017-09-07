@@ -4,6 +4,7 @@ $produitModel = new Produit();
 $listeModel = new Liste();
 $produits = $produitModel->getAll($connect);
 $listes = $listeModel->getAllUntrash($connect);
+$listes_trash = $listeModel->getAlltrash($connect);
 //echo '<pre>'.print_r($_SERVER).'</pre>';
 ?>
 
@@ -20,7 +21,7 @@ $listes = $listeModel->getAllUntrash($connect);
     </div>
 </div>
 <div id="form_ajout_produit">
-    <form action="<?php echo HOME; ?>" method="post" name='ajoutProduit' >
+    <form action="" method="post" name='ajoutProduit' >
         <div class='form form-group'>
             <p> Libellé :
                 <input  type ='text' name="libelle_produit" placeholder="Nom du produit" class="form-control"></p>           
@@ -31,7 +32,7 @@ $listes = $listeModel->getAllUntrash($connect);
 
 
 <div id="form_ajout_liste">
-    <form action="<?php echo HOME ?>" method="post" name='ajoutListe' >
+    <form action="" method="post" name='ajoutListe' >
         <div class='form form-group'>
             <p> Produit: <select name='produit_id' class="form-control">
                     <option value="">--</option>;
@@ -54,11 +55,22 @@ $listes = $listeModel->getAllUntrash($connect);
     <div class ="col-md-6">
         <?php
         foreach ($listes as $liste) {
-            echo '<div class="item_liste '.$liste['liste_id'].  '"'.' style="background-color:'.getCouleur($liste).'"'.'>' . $liste['libelle'] . ' à consommer avant :' . getInterval($liste). ' jours</div>';
+            echo '<div class="item_liste ' . $liste['liste_id'] . '"' . ' style="background-color:' . getCouleur($liste) . '"' . '>' . $liste['libelle'] . ' à consommer avant :' . getInterval($liste) . ' jours</div>';
+        }
+        ?>
+    </div>
+
+
+    <div class ="col-md-6">
+
+        <?php
+        foreach ($listes_trash as $liste_trash) {
+            echo '<div class="item_liste_trash ' . $liste_trash['liste_id'] . '"' . ' style="background-color:' . getCouleur($liste_trash) . '"' . '>' . $liste_trash['libelle'] . ' à consommer avant :' . getInterval($liste_trash) . ' jours</div>';
         }
         ?>
     </div>
 </div>
+
 
 <?php
 if (isset($_POST["submit_ajout_produit"]) && $_POST["submit_ajout_produit"] == "Ajouter") {
@@ -78,3 +90,4 @@ if (isset($_POST["submit_ajout_liste"]) && $_POST["submit_ajout_liste"] == "Ajou
         echo 'Veuillez renseigner les deux dates et un produit';
 }
 ?>
+

@@ -13,14 +13,18 @@ function recupererId(classes) {
 
 }
 $(document).ready(function () {
-    $('.item_liste').click(function () {
+
+    $('.item_liste_trash').click(function () {
+
+        $(this).hide();
+       
         var classes = ($(this).attr('class'));
         var id = recupererId(classes);
         //alert(id)
         $.ajax({
-            url: 'http://localhost/dlc/trash.php',
-            type: 'GET',
-            //data: 'id=' + id,
+            url: 'untrash.php',
+            type: "GET",
+            data: 'id=' + id,
             succes: function (test) {
                 alert(test);
             },
@@ -28,12 +32,43 @@ $(document).ready(function () {
                 alert(statut);
             },
             complete: function (test) {
-                console.debug(test.statusCode);
+                window.location.reload();
+
             },
+            async: false
 
         });
 
     });
+
+    $('.item_liste').click(function () {
+        $(this).hide();
+        // div.item_liste:nth-child(1)
+        //html body div.container-fluid div.row div.col-md-6 div.item_liste.6
+        var classes = ($(this).attr('class'));
+        var id = recupererId(classes);
+        //alert(id)
+        $.ajax({
+            url: 'trash.php',
+            type: "GET",
+            data: 'id=' + id,
+            succes: function (test) {
+                alert(test);
+            },
+            error: function (resultat, statut, erreur) {
+                alert(statut);
+            },
+            complete: function (test) {
+
+                window.location.reload();
+            },
+            async: false
+
+        });
+
+    });
+
+
 
     $('#date_achat').datepicker({
         dateFormat: 'yy-mm-dd'

@@ -42,5 +42,24 @@ class Liste {
         $stmt->execute();
         return $stmt->fetchAll();
     }
+    public function getAlltrash($connect) {
+        $stmt = $connect->prepare("SELECT * FROM liste l "
+                . "LEFT JOIN produit p ON l.produit_id=p.produit_id "
+                . "LEFT JOIN date d ON l.date_id=d.date_id "
+                . "WHERE is_trash=1 "
+                . "ORDER BY d.date_per ASC"
+                
+                );
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    public function setTrash ($connect, $id) {
+        $query = $connect->prepare("UPDATE liste l SET is_trash = 1 WHERE l.liste_id = ".$id);
+        $query->execute();         
+    }
+    public function setUnTrash ($connect, $id) {
+        $query = $connect->prepare("UPDATE liste l SET is_trash = 0 WHERE l.liste_id = ".$id);
+        $query->execute();         
+    }
 
 }
